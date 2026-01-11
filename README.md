@@ -70,4 +70,5 @@ A simple frontend UI is included to demonstrate interaction with the backend.
 
 **Homepage Screenshot:**  
 
-![Home Page](./screenshots/render+vs_code/home_page.jpeg)
+![Home Page](./screenshots/render_vs_code/home_page.jpeg)
+

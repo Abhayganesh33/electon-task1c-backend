@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 app.post("/addUser", (req, res) => {
   const { name, email } = req.body;
   db.query(
-    "INSERT INTO users (name, email) VALUES (?, ?)",
+    "INSERT INTO users2 (name, email) VALUES (?, ?)",
     [name, email],
     (err) => {
       if (err) res.status(500).json({ error: err.message });
@@ -24,8 +24,8 @@ app.post("/addUser", (req, res) => {
   );
 });
 
-app.get("/users", (req, res) => {
-  db.query("SELECT * FROM users", (err, results) => {
+app.get("/users2", (req, res) => {
+  db.query("SELECT * FROM users2", (err, results) => {
     if (err) res.status(500).json({ error: err.message });
     else res.json(results);
   });
@@ -35,7 +35,7 @@ app.put("/updateUser/:id", (req, res) => {
   const { id } = req.params;
   const { name, email } = req.body;
   db.query(
-    "UPDATE users SET name = ?, email = ? WHERE id = ?",
+    "UPDATE users2 SET name = ?, email = ? WHERE id = ?",
     [name, email, id],
     (err) => {
       if (err) res.status(500).json({ error: err.message });
@@ -46,7 +46,7 @@ app.put("/updateUser/:id", (req, res) => {
 
 app.delete("/deleteUser/:id", (req, res) => {
   const { id } = req.params;
-  db.query("DELETE FROM users WHERE id = ?", [id], (err) => {
+  db.query("DELETE FROM users2 WHERE id = ?", [id], (err) => {
     if (err) res.status(500).json({ error: err.message });
     else res.json({ message: "User deleted" });
   });

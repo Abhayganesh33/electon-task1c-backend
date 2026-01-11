@@ -1,4 +1,4 @@
-const API = "http://localhost:3000";
+const API = "https://electon-task1c-backend.onrender.com";
 let editId = null;
 
 function addUser() {
